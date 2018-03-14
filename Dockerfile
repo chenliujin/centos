@@ -13,5 +13,9 @@ RUN yum update -y
 RUN yum install -y epel-release
 RUN yum install -y vim
 
+RUN cat << EOF  >> ~/.bashrc
+alias ll='ls -alF'
+EOF
+
 CMD ["/usr/sbin/init"]
 
