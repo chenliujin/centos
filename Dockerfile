@@ -21,4 +21,4 @@ RUN echo "alias ll='ls -alF'\n" >> ~/.bashrc
 
 CMD ["/usr/sbin/init"]
 
-# centos:7.4.1708-beta.3
+# centos:7.4.1708-beta.2
