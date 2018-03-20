@@ -11,7 +11,7 @@ RUN cp -f /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
 # 阿里镜像
 RUN mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
-RUN wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
+RUN curl http://mirrors.aliyun.com/repo/Centos-7.repo > /etc/yum.repos.d/CentOS-Base.repo
 
 RUN yum update -y
 RUN yum install -y epel-release
