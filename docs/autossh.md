@@ -21,3 +21,6 @@ autossh -M 7281 -fCNR 7280:localhost:2222 root@k1
 ssh -fCNL *:2222:localhost:7280 localhost
 ```
 
+
+# 参考文献
+- https://www.aliyun.com/jiaocheng/131565.html
