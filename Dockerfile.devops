@@ -2,11 +2,11 @@ FROM centos:7.4.1708-beta.4
 
 MAINTAINER chenliujin <liujin.chen@qq.com>
 
-RUN yum install -y openssh-server
+RUN yum install -y openssh-server openssh-clients
 RUN yum install -y rsync
 RUN yum install -y net-tools
 RUN yum install -y tree
 RUN yum install -y sudo
-RUN yum update -y
+RUN yum update  -y
 
 RUN systemctl enable sshd
