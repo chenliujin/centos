@@ -20,5 +20,3 @@ RUN cat /usr/share/zoneinfo/Asia/Shanghai > /etc/localtime
 RUN echo "alias ll='ls -alF'\n" >> /root/.bashrc
 
 CMD ["/usr/sbin/init"]
-
-# centos:7.4.1708-beta.4
