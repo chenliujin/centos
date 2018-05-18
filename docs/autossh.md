@@ -21,6 +21,17 @@ autossh -M 7281 -fCNR 7280:localhost:2222 root@k1
 ssh -fCNL *:2222:localhost:7280 localhost
 ```
 
+---
+
+# 端口映射
+
+```
+ssh -fNR 0.0.0.0:80:localhost:8080 root@xxx.xxx.xxx -p 2112
+```
+
+上述的含义为：以root用户ssh连接到xxx.xxx.xxx，其中xxx.xxx.xxx的ssh端口为2112，然后建立一个隧道把localhost的8080端口绑定到xxx.xxx.xxx的80端口，xxx.xxx.xxx的监听IP为0.0.0.0，即所有地址。
+
+---
 
 # 参考文献
 - https://www.aliyun.com/jiaocheng/131565.html
