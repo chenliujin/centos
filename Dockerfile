@@ -10,7 +10,7 @@ MAINTAINER chenliujin <liujin.chen@qq.com>
 RUN mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
 RUN curl http://mirrors.aliyun.com/repo/Centos-7.repo > /etc/yum.repos.d/CentOS-Base.repo
 
-RUN yum update -y
+RUN yum update  -y
 RUN yum install -y epel-release
 RUN yum install -y vim
 
