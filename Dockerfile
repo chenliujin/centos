@@ -18,5 +18,6 @@ RUN echo "alias ll='ls -alF'\n" >> /root/.bashrc
 RUN yum update  -y
 RUN yum install -y epel-release
 RUN yum install -y vim
+RUN yum install -y net-tools 
 
 CMD ["/usr/sbin/init"]
