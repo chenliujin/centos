@@ -6,6 +6,8 @@ MAINTAINER chenliujin <liujin.chen@qq.com>
 # docker run --name=centos --privileged=true centos:7.4.1708 echo 1 > /proc/sys/net/ipv4/ip_forward
 # docker commit centos centos:7.4.1708-beta.0
 
+RUN echo 1 > /proc/sys/net/ipv4/ip_forward
+
 # 阿里镜像
 RUN mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
 RUN curl http://mirrors.aliyun.com/repo/Centos-7.repo > /etc/yum.repos.d/CentOS-Base.repo
@@ -20,4 +22,4 @@ RUN yum install -y epel-release
 RUN yum install -y vim
 RUN yum install -y net-tools 
 
-CMD ["/usr/sbin/init"]
+ENTRYPOINT ["/usr/sbin/init"]
