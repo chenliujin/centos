@@ -15,7 +15,7 @@ RUN yum install -y epel-release
 RUN yum install -y vim
 
 # devops
-RUN yum install -y openssh-server openssh-clients
+RUN yum install -y openssh openssh-server openssh-clients
 RUN yum install -y rsync
 RUN yum install -y net-tools
 RUN yum install -y tree
