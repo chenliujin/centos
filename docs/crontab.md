@@ -3,6 +3,8 @@
 
 ```
 yum install -y crontabs
+
+systemctl enable crond
 ```
 
 # crontab
