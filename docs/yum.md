@@ -11,15 +11,15 @@
 
 ```
 reposync -r ambari-2.6.2.0 -p /data/www/yum/
-reposync -r HDP-2.6-repo-1 -p /data/www/yum/
-reposync -r HDP-2.6-GPL-repo-1 -p /data/www/yum/
-reposync -r HDP-UTILS-1.1.0.22-repo-1 -p /data/www/yum/
+reposync -r HDP-2.6-repo-1 -p /data/www/yum/HDP/centos7/2.x/updates/2.6.5.0/
+reposync -r HDP-2.6-GPL-repo-1 -p /data/www/yum/HDP-GPL/centos7/2.x/updates/2.6.5.0/
+reposync -r HDP-UTILS-1.1.0.22-repo-1 -p /data/www/yum/HDP-UTILS-1.1.0.22/repos/centos7/
 
 # 创建 yum 仓库
 createrepo /data/www/yum/ambari-2.6.2.0/
-createrepo /data/www/yum/HDP-2.6-repo-1/
-createrepo -po /data/www/yum/HDP-2.6-GPL-repo-1/ /data/www/yum/HDP-2.6-GPL-repo-1/
-createrepo /data/www/yum/HDP-UTILS-1.1.0.22-repo-1/
+createrepo -po /data/www/yum/HDP/centos7/2.x/updates/2.6.5.0/ /data/www/yum/HDP/centos7/2.x/updates/2.6.5.0/
+createrepo -po /data/www/yum/HDP-GPL/centos7/2.x/updates/2.6.5.0/ /data/www/yum/HDP-GPL/centos7/2.x/updates/2.6.5.0/
+createrepo -po /data/www/yum/HDP-UTILS-1.1.0.22/repos/centos7/ /data/www/yum/HDP-UTILS-1.1.0.22/repos/centos7/
 ```
 
 # ambari.repo
@@ -63,8 +63,27 @@ gpgcheck=0
 
 # yum  provides
 
-使用命令 yum provides */nslookup 可以找到提供 nslookup 命令的软件包。
+使用命令 `yum provides */nslookup` 可以找到提供 nslookup 命令的软件包。
 
 ```
 # yum  provides  */nslookup
+```
+
+# yum 删除之前的安装，包括依赖
+
+## 查看安装的 `ID`
+
+```
+# yum history list nginx
+Loaded plugins: fastestmirror
+ID     | Command line             | Date and time    | Action(s)      | Altered
+-------------------------------------------------------------------------------
+     9 | install -y nginx         | 2018-04-21 19:19 | Install        |    1 EE
+history list
+```
+
+## 卸载
+
+```
+# yum history undo 9
 ```
